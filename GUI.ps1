@@ -1,4 +1,3 @@
-﻿#PowerShell.exe -WindowStyle Hidden
 function GUI{
 #################################
 #          GUI Design           #
@@ -11,8 +10,8 @@ Add-Type -AssemblyName System.Windows.Forms
 #Sets the inital size of the program frame
 $Form                            = New-Object system.Windows.Forms.Form
 $Form.ClientSize                 = '1200,685'
-$Form.text                       = "PowerShell Template"
-$Form.TopMost                    = $False
+$Form.text                       = "TORHat"
+$Form.TopMost                    = $True
 $Form.Location                   = '100,200'
 
 #################################
@@ -56,7 +55,6 @@ $HostIPTextBox.width                  = 139
 $HostIPTextBox.height                 = 20
 $HostIPTextBox.location               = New-Object System.Drawing.Point(7,41)
 $HostIPTextBox.Font                   = 'Microsoft Sans Serif,10'
-$tipTargetHere.SetToolTip($HostIPTextBox,[System.String]'Addresses can be in CIDR notation or seperated by commas.')
 
 #Creates the "Test Connection" button
 $TestConnection                  = New-Object system.Windows.Forms.Button
@@ -89,16 +87,15 @@ $Application.text                = "Application Logs"
 $Application.AutoSize            = $false
 $Application.width               = 150
 $Application.height              = 18
-$Application.location            = New-Object System.Drawing.Point(20,145)
+$Application.location            = New-Object System.Drawing.Point(20,184)
 $Application.Font                = 'Microsoft Sans Serif,10'
-
 #Creates the "Security Logs" Check box
 $Security                        = New-Object system.Windows.Forms.CheckBox
 $Security.text                   = "Security Logs"
 $Security.AutoSize               = $false
 $Security.width                  = 150
 $Security.height                 = 18
-$Security.location               = New-Object System.Drawing.Point(20,166)
+$Security.location               = New-Object System.Drawing.Point(20,144)
 $Security.Font                   = 'Microsoft Sans Serif,10'
 
 #Creates the "System Logs" Check box
@@ -107,7 +104,7 @@ $System.text                     = "System Logs "
 $System.AutoSize                 = $false
 $System.width                    = 150
 $System.height                   = 18
-$System.location                 = New-Object System.Drawing.Point(20,187)
+$System.location                 = New-Object System.Drawing.Point(20,164)
 $System.Font                     = 'Microsoft Sans Serif,10'
 
 #Creates the "IIS Logs" Check box
@@ -125,7 +122,7 @@ $Process.text                    = "Process"
 $Process.AutoSize                = $false
 $Process.width                   = 150
 $Process.height                  = 18
-$Process.location                = New-Object System.Drawing.Point(20,224)
+$Process.location                = New-Object System.Drawing.Point(20,204)
 $Process.Font                    = 'Microsoft Sans Serif,10'
 
 #Creates the "Services" Check box
@@ -134,7 +131,7 @@ $Services.text                   = "Services"
 $Services.AutoSize               = $false
 $Services.width                  = 150
 $Services.height                 = 18
-$Services.location               = New-Object System.Drawing.Point(20,244)
+$Services.location               = New-Object System.Drawing.Point(20,224)
 $Services.Font                   = 'Microsoft Sans Serif,10'
 
 #Creates the "Connections" Check box
@@ -143,7 +140,7 @@ $Connections.text                = "Connections"
 $Connections.AutoSize            = $false
 $Connections.width               = 150
 $Connections.height              = 18
-$Connections.location            = New-Object System.Drawing.Point(20,265)
+$Connections.location            = New-Object System.Drawing.Point(20,244)
 $Connections.Font                = 'Microsoft Sans Serif,10'
 
 #Creates the "Registry" Check box
@@ -152,7 +149,7 @@ $Registry.text                   = "Registry"
 $Registry.AutoSize               = $false
 $Registry.width                  = 150
 $Registry.height                 = 18
-$Registry.location               = New-Object System.Drawing.Point(20,285)
+$Registry.location               = New-Object System.Drawing.Point(20,264)
 $Registry.Font                   = 'Microsoft Sans Serif,10'
 
 #Creates the "AD Users" Check box
@@ -161,7 +158,7 @@ $ADUsers.text                    = "AD Users"
 $ADUsers.AutoSize                = $false
 $ADUsers.width                   = 150
 $ADUsers.height                  = 18
-$ADUsers.location                = New-Object System.Drawing.Point(20,304)
+$ADUsers.location                = New-Object System.Drawing.Point(20,284)
 $ADUsers.Font                    = 'Microsoft Sans Serif,10'
 
 #Creates the "Scheduled Task" Check box
@@ -170,7 +167,7 @@ $Scheduled.text                  = "Scheduled Task"
 $Scheduled.AutoSize              = $false
 $Scheduled.width                 = 150
 $Scheduled.height                = 18
-$Scheduled.location              = New-Object System.Drawing.Point(20,327)
+$Scheduled.location              = New-Object System.Drawing.Point(20,304)
 $Scheduled.Font                  = 'Microsoft Sans Serif,10'
 
 #Creates the "Files" Check box
@@ -179,7 +176,7 @@ $Files.text                      = "Files"
 $Files.AutoSize                  = $false
 $Files.width                     = 150
 $Files.height                    = 18
-$Files.location                  = New-Object System.Drawing.Point(19,349)
+$Files.location                  = New-Object System.Drawing.Point(20,324)
 $Files.Font                      = 'Microsoft Sans Serif,10'
 
 #################################
@@ -211,7 +208,7 @@ $Txt.text                        = ".Txt"
 $Txt.AutoSize                    = $false
 $Txt.width                       = 150
 $Txt.height                      = 18
-$Txt.location                    = New-Object System.Drawing.Point(20,432)
+$Txt.location                    = New-Object System.Drawing.Point(20,423)
 $Txt.Font                        = 'Microsoft Sans Serif,10'
 
 #Creates the ".Json" Check box
@@ -223,14 +220,14 @@ $Txt.Font                        = 'Microsoft Sans Serif,10'
 #$Json.location                   = New-Object System.Drawing.Point(20,457)
 #$Json.Font                       = 'Microsoft Sans Serif,10'
 
-#Creates the "Grid view Analysis" Check box
-$Analysis                        = New-Object system.Windows.Forms.CheckBox
-$Analysis.text                   = "Grid view Analysis"
-$Analysis.AutoSize               = $false
-$Analysis.width                  = 95
-$Analysis.height                 = 18
-$Analysis.location               = New-Object System.Drawing.Point(20,483)
-$Analysis.Font                   = 'Microsoft Sans Serif,10'
+#Creates the ".pdf" Check box
+$Analysis                             = New-Object system.Windows.Forms.CheckBox
+$Analysis.text                        = "Grid view Analysis"
+$Analysis.AutoSize                    = $false
+$Analysis.width                       = 150
+$Analysis.height                      = 18
+$Analysis.location                    = New-Object System.Drawing.Point(20,443)
+$Analysis.Font                        = 'Microsoft Sans Serif,10'
 
 #################################
 #         Scan/Progress         #
@@ -246,14 +243,13 @@ $ScanHost.location               = New-Object System.Drawing.Point(12,520)
 $ScanHost.Font                   = 'Microsoft Sans Serif,14'
 
 #Temporary Progress Bar
-$ProgressBar                     = New-Object system.Windows.Forms.ProgressBar
-$ProgressBar.width               = 140
-$ProgressBar.height              = 20
-$ProgressBar.location            = New-Object System.Drawing.Point(8,560)
-$progressbar.Maximum             = $files.Count
-$progressbar.Step                = 1
-$progressbar.Value               = 0
-
+$ProgressBar             = New-Object system.Windows.Forms.ProgressBar
+$ProgressBar.width        = 140
+$ProgressBar.height       = 20
+$ProgressBar.location     = New-Object System.Drawing.Point(8,560)
+$progressbar.Maximum = $files.Count
+$progressbar.Step = 1
+$progressbar.Value = 0
 #Creates the progress bar with text overlay
 #$ProgressBarOverlay              = New-Object system.Windows.Forms.ProgressBar
 #$ProgressBarOverlay.width        = 138
@@ -262,7 +258,6 @@ $progressbar.Value               = 0
 #For reference on intended use
 #https://www.sapien.com/blog/2019/03/20/progress-bar-series-part-3-handling-progress-status-information-in-a-gui-application/
 #Will need to increase the size of the box to fit text
-
 
 #################################
 #              TABS             #
@@ -278,7 +273,7 @@ $progressbar.Value               = 0
 [System.Windows.Forms.TabPage]$tabPageApplication = $null
 [System.Windows.Forms.DataGridView]$gridApplication = $null
 [System.Windows.Forms.TabPage]$tabPageIIS = $null
-[System.Windows.Forms.DataGridView]$gridIIS = $null
+#[System.Windows.Forms.DataGridView]$gridIIS = $null
 [System.Windows.Forms.TabPage]$tabPageProcesses = $null
 [System.Windows.Forms.DataGridView]$gridProcesses = $null
 [System.Windows.Forms.TabPage]$tabPageServices = $null
@@ -299,7 +294,7 @@ $tabMainDisplay = (New-Object -TypeName System.Windows.Forms.TabControl)
 $tabPageSecurity = (New-Object -TypeName System.Windows.Forms.TabPage)
 $tabPageSystem = (New-Object -TypeName System.Windows.Forms.TabPage)
 $tabPageApplication = (New-Object -TypeName System.Windows.Forms.TabPage)
-$tabPageIIS = (New-Object -TypeName System.Windows.Forms.TabPage)
+#$tabPageIIS = (New-Object -TypeName System.Windows.Forms.TabPage)
 $tabPageProcesses = (New-Object -TypeName System.Windows.Forms.TabPage)
 $tabPageServices = (New-Object -TypeName System.Windows.Forms.TabPage)
 $tabPageConnections = (New-Object -TypeName System.Windows.Forms.TabPage)
@@ -318,13 +313,13 @@ $gridRegistry = (New-Object -TypeName System.Windows.Forms.DataGridView)
 $gridActiveD = (New-Object -TypeName System.Windows.Forms.DataGridView)
 $gridSchTasks = (New-Object -TypeName System.Windows.Forms.DataGridView)
 $gridFiles = (New-Object -TypeName System.Windows.Forms.DataGridView)
-$tipTargetHere = (New-Object -TypeName System.Windows.Forms.ToolTip -ArgumentList @($components))
+#$tipTargetHere = (New-Object -TypeName System.Windows.Forms.ToolTip -ArgumentList @($components) )
 
 $tabMainDisplay.SuspendLayout()
 $tabPageSecurity.SuspendLayout()
 $tabPageSystem.SuspendLayout()
 $tabPageApplication.SuspendLayout()
-$tabPageIIS.SuspendLayout()
+#$tabPageIIS.SuspendLayout()
 $tabPageProcesses.SuspendLayout()
 $tabPageServices.SuspendLayout()
 $tabPageConnections.SuspendLayout()
@@ -336,7 +331,7 @@ $tabPageFiles.SuspendLayout()
 ([System.ComponentModel.ISupportInitialize]$gridSecurity).BeginInit()
 ([System.ComponentModel.ISupportInitialize]$gridSystem).BeginInit()
 ([System.ComponentModel.ISupportInitialize]$gridApplication).BeginInit()
-([System.ComponentModel.ISupportInitialize]$gridIIS).BeginInit()
+#([System.ComponentModel.ISupportInitialize]$gridIIS).BeginInit()
 ([System.ComponentModel.ISupportInitialize]$gridProcesses).BeginInit()
 ([System.ComponentModel.ISupportInitialize]$gridServices).BeginInit()
 ([System.ComponentModel.ISupportInitialize]$gridConnections).BeginInit()
@@ -352,7 +347,7 @@ $tabPageFiles.SuspendLayout()
 $tabMainDisplay.Controls.Add($tabPageSecurity)
 $tabMainDisplay.Controls.Add($tabPageSystem)
 $tabMainDisplay.Controls.Add($tabPageApplication)
-$tabMainDisplay.Controls.Add($tabPageIIS)
+#$tabMainDisplay.Controls.Add($tabPageIIS)
 $tabMainDisplay.Controls.Add($tabPageProcesses)
 $tabMainDisplay.Controls.Add($tabPageServices)
 $tabMainDisplay.Controls.Add($tabPageConnections)
@@ -401,14 +396,14 @@ $tabPageApplication.Visible = $false
 #
 #tabPageIIS
 #
-$tabPageIIS.Controls.Add($gridIIS)
-$tabPageIIS.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]4,[System.Int32]22))
-$tabPageIIS.Name = [System.String]'tabPageIIS'
-$tabPageIIS.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]881,[System.Int32]623))
-$tabPageIIS.TabIndex = [System.Int32]3
-$tabPageIIS.Text = [System.String]'IIS Logs'
-$tabPageIIS.UseVisualStyleBackColor = $true
-$tabPageIIS.Visible = $false
+#$tabPageIIS.Controls.Add($gridIIS)
+#$tabPageIIS.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]4,[System.Int32]22))
+#$tabPageIIS.Name = [System.String]'tabPageIIS'
+#$tabPageIIS.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]881,[System.Int32]623))
+#$tabPageIIS.TabIndex = [System.Int32]3
+#$tabPageIIS.Text = [System.String]'IIS Logs'
+#$tabPageIIS.UseVisualStyleBackColor = $true
+#$tabPageIIS.Visible = $false
 #
 #tabPageProcesses
 #
@@ -513,11 +508,11 @@ $gridApplication.TabIndex = [System.Int32]0
 #
 #gridIIS
 #
-$gridIIS.ColumnHeadersHeightSizeMode = [System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode]::AutoSize
-$gridIIS.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]3,[System.Int32]3))
-$gridIIS.Name = [System.String]'gridIIS'
-$gridIIS.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]875,[System.Int32]617))
-$gridIIS.TabIndex = [System.Int32]0
+#$gridIIS.ColumnHeadersHeightSizeMode = [System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode]::AutoSize
+#$gridIIS.Location = (New-Object -TypeName System.Drawing.Point -ArgumentList @([System.Int32]3,[System.Int32]3))
+#$gridIIS.Name = [System.String]'gridIIS'
+#$gridIIS.Size = (New-Object -TypeName System.Drawing.Size -ArgumentList @([System.Int32]875,[System.Int32]617))
+#$gridIIS.TabIndex = [System.Int32]0
 #
 #gridProcesses
 #
@@ -579,7 +574,7 @@ $gridFiles.add_CellContentClick($DataGridView6_CellContentClick)
 #
 #tipTargetHere
 #
-$tipTargetHere.ToolTipTitle = [System.String]'Enter an IP Address'
+#$tipTargetHere.ToolTipTitle = [System.String]'Enter an IP Address' 
 
 #################################
 #       BuildingStructure       #
@@ -592,7 +587,7 @@ $tabMainDisplay.ResumeLayout($false)
 $tabPageSecurity.ResumeLayout($false)
 $tabPageSystem.ResumeLayout($false)
 $tabPageApplication.ResumeLayout($false)
-$tabPageIIS.ResumeLayout($false)
+#$tabPageIIS.ResumeLayout($false)
 $tabPageProcesses.ResumeLayout($false)
 $tabPageServices.ResumeLayout($false)
 $tabPageConnections.ResumeLayout($false)
@@ -604,7 +599,7 @@ $tabPageFiles.ResumeLayout($false)
 ([System.ComponentModel.ISupportInitialize]$gridSecurity).EndInit()
 ([System.ComponentModel.ISupportInitialize]$gridSystem).EndInit()
 ([System.ComponentModel.ISupportInitialize]$gridApplication).EndInit()
-([System.ComponentModel.ISupportInitialize]$gridIIS).EndInit()
+#([System.ComponentModel.ISupportInitialize]$gridIIS).EndInit()
 ([System.ComponentModel.ISupportInitialize]$gridProcesses).EndInit()
 ([System.ComponentModel.ISupportInitialize]$gridServices).EndInit()
 ([System.ComponentModel.ISupportInitialize]$gridConnections).EndInit()
@@ -621,7 +616,7 @@ Add-Member -InputObject $Form -Name gridSystem -Value $gridSystem -MemberType No
 Add-Member -InputObject $Form -Name tabPageApplication -Value $tabPageApplication -MemberType NoteProperty
 Add-Member -InputObject $Form -Name gridApplication -Value $gridApplication -MemberType NoteProperty
 Add-Member -InputObject $Form -Name tabPageIIS -Value $tabPageIIS -MemberType NoteProperty
-Add-Member -InputObject $Form -Name gridIIS -Value $gridIIS -MemberType NoteProperty
+#Add-Member -InputObject $Form -Name gridIIS -Value $gridIIS -MemberType NoteProperty
 Add-Member -InputObject $Form -Name tabPageProcesses -Value $tabPageProcesses -MemberType NoteProperty
 Add-Member -InputObject $Form -Name gridProcesses -Value $gridProcesses -MemberType NoteProperty
 Add-Member -InputObject $Form -Name tabPageServices -Value $tabPageServices -MemberType NoteProperty
@@ -639,13 +634,11 @@ Add-Member -InputObject $Form -Name gridFiles -Value $gridFiles -MemberType Note
 Add-Member -InputObject $Form -Name tipTargetHere -Value $tipTargetHere -MemberType NoteProperty
 
 #Loads all form information into the form variable
-$Form.controls.AddRange(@($Application,$Security,$System,$IIS,$Process,$Services,$Connections,$Registry,$ADUsers,$Scheduled,$Files,$Display,$Txt,$Json,$anaylsis,$TestConnection,$ScanHost,$ProgressBar,$ProgressBarOverlay,$ProgressTextBox,$HostIPTextBox,$TargetHostLabel,$ScanTypeLabel,$DataGridView1,$OutputTypeLabel))
+$Form.controls.AddRange(@($Application,$Security,$System,$IIS,$Process,$Services,$Connections,$Registry,$ADUsers,$Scheduled,$Files,$Display,$Txt,$Json,$Analysis,$TestConnection,$ScanHost,$ProgressBar,$ProgressBarOverlay,$ProgressTextBox,$HostIPTextBox,$TargetHostLabel,$ScanTypeLabel,$DataGridView1,$OutputTypeLabel))
+
 
 #Adds a functionality for Target Host text box once changed
 $HostIPTextBox.Add_TextChanged({  })
-
-#Adds a Reference to HKEY_CLASSES_ROOT for Registry Scan
-New-PSDrive -Name HKCR -PSProvider Registry -Root HKEY_CLASSES_ROOT
 
 #To test for IP Address/Hostname Resolution
 $ScanHost.add_MouseClick($mclickScanHost)
@@ -653,7 +646,7 @@ $ScanHost.add_MouseClick($mclickScanHost)
 #Adds a click function to the "Scan Host" button
 $ScanHost.Add_Click({
 $folder="$env:USERPROFILE\Desktop\Analysis" ; if(!([System.IO.directory]::Exists($folder))){ mkdir $env:USERPROFILE\Desktop\Analysis}
-
+$mclickScanHost
 #################################
 #          Output Type          #
 #                               #
@@ -663,7 +656,6 @@ if ($Display.Checked -eq $true) { $TOutdisplay = "1"}
 if ($txt.Checked -eq $true) { $TOuttext = "1" }
 if ($Analysis.Checked -eq $true) { $TOutAnalysis = "1"}
 if ($IPAddr){$Pass = "1"}
-
 ####################################
 #               Scans              #
 ####################################
@@ -684,7 +676,7 @@ if ($Registry.Checked -eq $true) { reg{($TOutdisplay,$TOuttext,$IPAddr,$TOutAnal
 
 #Displays the base frame of the GUI Based on Above Paramaters
 $Form.ShowDialog()
-
+}
 $clickTesting = {
       $global:address=$null
       $global:address=$HostIPTextBox.Text
@@ -715,19 +707,19 @@ $mclickScanHost = {
           
       }
 }
-
 function APP {
-      $progressbar.value = 0
+     $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
       $app = Get-WmiObject -class win32_ntlogevent -Filter "logfile='Application'" | select -Property sourcename, Eventcode, Logfile,message
       $Files=$app
-      $progressbar.Maximum = $files.Count 
+       $progressbar.Maximum = $files.Count 
       foreach ($file in $Files){$progressbar.PerformStep()}
+      if($Pass -eq "1"){ $app = Get-EventLog -LogName "Application" -ComputerName $IPAddr -After (Get-Date).AddHours(-24)  }
+
       if($TOutdisplay -eq "1"){$array.AddRange($app) ;$gridapplication.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $app > "$env:USERPROFILE\Desktop\Analysis\Application.txt" }
       if($TOutgridAnalysis -eq "1"){ $app| Out-GridView}
 }
-
 function sec {
       $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
@@ -735,25 +727,23 @@ function sec {
       $Files=$sec
       $progressbar.Maximum = $files.Count
       foreach ($file in $Files){$progressbar.PerformStep()}
+       if($Pass -eq "1"){ $app = Get-EventLog -LogName "security" -ComputerName $IPAddr -After (Get-Date).AddHours(-24)  }
       if($TOutdisplay -eq "1"){$array.AddRange($Sec) ;$gridsecurity.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $ser > "$env:USERPROFILE\Desktop\Analysis\Security.txt" }
-      if($TOutgridAnalysis -eq "1"){ $Sec| Out-GridView}
-}
-
+      if($TOutgridAnalysis -eq "1"){ $Sec| Out-GridView}}
 function Sys {
-      $progressbar.value = 0
+       $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
-      $sys = Get-WmiObject -class win32_ntlogevent -Filter "logfile='system'" | select -Property sourcename, Eventcode, Logfile,message
-      $Files=$sys
-      $progressbar.Maximum = $files.Count
+       $sys = Get-WmiObject -class win32_ntlogevent -Filter "logfile='system'" | select -Property sourcename, Eventcode, Logfile,message
+       $Files=$sys
+       $progressbar.Maximum = $files.Count
       foreach ($file in $Files){$progressbar.PerformStep()}
-      if($TOutdisplay -eq "1"){$array.AddRange($sys) ;$gridsystem.DataSource = $array ;$form.refresh()}
+      if($Pass -eq "1"){ $app = Get-EventLog -LogName "System" -ComputerName $IPAddr -After (Get-Date).AddHours(-24)  }
+    if($TOutdisplay -eq "1"){$array.AddRange($sys) ;$gridsystem.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $sys > "$env:USERPROFILE\Desktop\Analysis\System.txt" }
-      if($TOutgridAnalysis -eq "1"){ $sys| Out-GridView}
-}
-
+      if($TOutgridAnalysis -eq "1"){ $sys| Out-GridView}}
 function Proc {
-      $progressbar.value = 0
+       $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
       $pro = Get-WmiObject -class win32_process  | select -Property processName, Processid, parentProcessid, KernelModeTime 
       $Files=$pro
@@ -761,21 +751,19 @@ function Proc {
       foreach ($file in $Files){$progressbar.PerformStep()}
       if($TOutdisplay -eq "1"){$array.AddRange($pro) ;$gridProcesses.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $pro > "$env:USERPROFILE\Desktop\Analysis\Process.txt" }
-      if($TOutgridAnalysis -eq "1"){ $pro| Out-GridView}
-}
-
+      if($TOutgridAnalysis -eq "1"){ $pro| Out-GridView}}
 function Service {
-      $progressbar.value = 0
+        $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
-      $ser = Get-WmiObject -class win32_service  | select -Property Name, state, startmode,servicetype, Processid,pathname 
-      $Files=$ser
-      $progressbar.Maximum = $files.Count
+       $ser = Get-WmiObject -class win32_service  | select -Property Name, state, startmode,servicetype, Processid,pathname 
+        $Files=$ser
+        $progressbar.Maximum = $files.Count
       foreach ($file in $Files){$progressbar.PerformStep()} 
-      if($TOutdisplay -eq "1"){$array.AddRange($Ser) ;$gridServices.DataSource = $array ;$form.refresh()}
+    if($TOutdisplay -eq "1"){$array.AddRange($Ser) ;$gridServices.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $ser > "$env:USERPROFILE\Desktop\Analysis\Service.txt" }
       if($TOutgridAnalysis -eq "1"){ $ser| Out-GridView}}
 function conn {
-      $progressbar.value = 0
+        $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
       $con = Get-NetTCPConnection | select -Property LocalAddress, LocalPort,RemoteAddress , RemotePort,State  
       $Files=$con
@@ -783,50 +771,44 @@ function conn {
       foreach ($file in $Files){$progressbar.PerformStep()} 
       if($TOutdisplay -eq "1"){$array.AddRange($con) ;$gridConnections.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $con > "$env:USERPROFILE\Desktop\Analysis\Connection.txt" }
-      if($TOutgridAnalysis -eq "1"){ $con| Out-GridView}
-}
-
+      if($TOutgridAnalysis -eq "1"){ $con| Out-GridView}}
 function sch {
-      $progressbar.value = 0 
+        $progressbar.value = 0 
       $array = New-Object System.Collections.ArrayList
-      $sch =  Get-ScheduledTask | select -Property TaskName,Description,taskname,triggers,actions,settings
-      $Files=$sch
-      $progressbar.Maximum = $files.Count
+       $sch =  Get-ScheduledTask | select -Property TaskName,Description,taskname,triggers,actions,settings
+          $Files=$sch
+          $progressbar.Maximum = $files.Count
       foreach ($file in $Files){$progressbar.PerformStep()} 
       if($TOutdisplay -eq "1"){$array.AddRange($sch) ;$gridSchTasks.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $sch > "$env:USERPROFILE\Desktop\Analysis\ScheduleTask.txt" }
-      if($TOutgridAnalysis -eq "1"){ $sch| Out-GridView}
-}
-
+      if($TOutgridAnalysis -eq "1"){ $sch| Out-GridView}}
 function Reg {
       $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
-      $keys = @("HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" , "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run" , "HKLM:\SYSTEM\ControlSet001\Control\Session Manager" , "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" , "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify" , "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\IniFileMapping\system.ini\boot" , "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" , "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" , "HKLM:\SYSTEM\CurrentControlSet\services" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunServicesOnce" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunServices" , "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects" , "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs" , "HKLM:\SOFTWARE\Classes\" , "HKCR:\" , "HKCR:\textfile\shell\open\command" , "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs")
+      $keys = @("HKCU:\Software\Microsoft\Windows\CurrentVersion\Run","HKCU:\Software\Microsoft\Windows\CurrentVersion\RunOnce","HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run","HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce","HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon","HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify","HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell","HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\IniFileMapping\system.ini\boot","HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders","HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders","HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders","HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders","HKLM:\SYSTEM\CurrentControlSet\services","HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects","HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs","HKLM:\Software\Classes\","HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs")
       $Target = @()
       foreach($x in $keys) {
       $Reg = Get-ItemProperty -Path $x -ErrorAction SilentlyContinue
       $Target += $Reg
+      }
         Foreach ($x2 in $Target) {
             if($TOutdisplay -eq "1"){$array.Add($x2); $gridregistry.DataSource = $array ;$form.refresh()}
             if($TOuttext -eq "1"){Echo $x2 > "$env:USERPROFILE\Desktop\Analysis\ScheduleTask.txt" }
             if($TOutgridAnalysis -eq "1"){ $x2| Out-GridView}
-            Else {Break}
-        }
-    }
+           
+      }
 }
-
 function ADUsers {
-      $progressbar.value = 0
+     $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
       $ADU = Get-AdUser -Filter 'Enabled -eq $false'
-      $Files = $ADU
-      $progressbar.Maximum = $files.Count
+       $Files=$ADU
+       $progressbar.Maximum = $files.Count
       foreach ($file in $Files){$progressbar.PerformStep()}   
       if($TOutdisplay -eq "1"){$array.AddRange($ADU) ;$gridActiveD.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $ADU > "$env:USERPROFILE\Desktop\Analysis\AD.txt" }
       if($TOutgridAnalysis -eq "1"){ $ADU| Out-GridView}
 }
-
 #function Files {
 #
 #      $array = New-Object System.Collections.ArrayList
@@ -834,41 +816,35 @@ function ADUsers {
 #    if($TOutdisplay -eq "1"){$array.AddRange($Ser) ;$gridSchTasks.DataSource = $array ;$form.refresh()}
 #      if($TOuttext -eq "1"){Echo $ser > "$env:USERPROFILE\Desktop\Analysis\Files.txt" }
 #}
-
-####################################
-#           Error Form             #
-#                                  #
-####################################
-
 Function Error{
 
-    $Form2                            = New-Object system.Windows.Forms.Form
-    $Form2.ClientSize                 = '392,145'
-    $Form2.text                       = "ERROR"
-    $Form2.BackColor                  = "#111211"
-    $Form2.TopMost                    = $false
+$Form2                            = New-Object system.Windows.Forms.Form
+$Form2.ClientSize                 = '392,145'
+$Form2.text                       = "ERROR"
+$Form2.BackColor                  = "#111211"
+$Form2.TopMost                    = $false
 
-    $okButton1                         = New-Object system.Windows.Forms.Button
-    $okButton1.BackColor               = "#f20c0c"
-    $okButton1.text                    = "OK"
-    $okButton1.width                   = 138
-    $okButton1.height                  = 52
-    $okButton1.location                = New-Object System.Drawing.Point(136,70)
-    $okButton1.Font                    = 'Microsoft Sans Serif,10'
+$okButton1                         = New-Object system.Windows.Forms.Button
+$okButton1.BackColor               = "#f20c0c"
+$okButton1.text                    = "OK"
+$okButton1.width                   = 138
+$okButton1.height                  = 52
+$okButton1.location                = New-Object System.Drawing.Point(136,70)
+$okButton1.Font                    = 'Microsoft Sans Serif,10'
 
-    $okTextBox1                        = New-Object system.Windows.Forms.TextBox
-    $okTextBox1.multiline              = $false
-    $okTextBox1.text                   = "Incorrect IP Format, Please re-enter IP Address"
-    $okTextBox1.BackColor              = "#000000"
-    $okTextBox1.width                  = 310
-    $okTextBox1.height                 = 20
-    $okTextBox1.location               = New-Object System.Drawing.Point(36,36)
-    $okTextBox1.Font                   = 'Times New Roman,12'
-    $okTextBox1.ForeColor              = "#f2140c"
+$okTextBox1                        = New-Object system.Windows.Forms.TextBox
+$okTextBox1.multiline              = $false
+$okTextBox1.text                   = "Incorrect IP Format, Please re-enter IP Address"
+$okTextBox1.BackColor              = "#000000"
+$okTextBox1.width                  = 310
+$okTextBox1.height                 = 20
+$okTextBox1.location               = New-Object System.Drawing.Point(36,36)
+$okTextBox1.Font                   = 'Times New Roman,12'
+$okTextBox1.ForeColor              = "#f2140c"
 
-    $Form2.controls.AddRange(@($okButton1,$okTextBox1))
+$Form2.controls.AddRange(@($okButton1,$okTextBox1))
 
-    $okButton1.Add_Click({ exit })
-    $Form2.ShowDialog()
-}
-}
+$okButton1.Add_Click({ exit })
+$Form2.ShowDialog()
+
+} 
