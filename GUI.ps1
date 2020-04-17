@@ -718,7 +718,7 @@ function APP {
 
       if($TOutdisplay -eq "1"){$array.AddRange($app) ;$gridapplication.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $app > "$env:USERPROFILE\Desktop\Analysis\Application.txt" }
-      if($TOutgridAnalysis -eq "1"){ $app| Out-GridView}
+      ifif($TOutAnalysis -eq "1"){ $app| Out-GridView}
 }
 function sec {
       $progressbar.value = 0
@@ -730,7 +730,7 @@ function sec {
        if($Pass -eq "1"){ $app = Get-EventLog -LogName "security" -ComputerName $IPAddr -After (Get-Date).AddHours(-24)  }
       if($TOutdisplay -eq "1"){$array.AddRange($Sec) ;$gridsecurity.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $ser > "$env:USERPROFILE\Desktop\Analysis\Security.txt" }
-      if($TOutgridAnalysis -eq "1"){ $Sec| Out-GridView}}
+      if($TOutAnalysis -eq "1"){ $Sec| Out-GridView}}
 function Sys {
        $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
@@ -741,7 +741,7 @@ function Sys {
       if($Pass -eq "1"){ $app = Get-EventLog -LogName "System" -ComputerName $IPAddr -After (Get-Date).AddHours(-24)  }
     if($TOutdisplay -eq "1"){$array.AddRange($sys) ;$gridsystem.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $sys > "$env:USERPROFILE\Desktop\Analysis\System.txt" }
-      if($TOutgridAnalysis -eq "1"){ $sys| Out-GridView}}
+      if($TOutAnalysis -eq "1"){ $sys| Out-GridView}}
 function Proc {
        $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
@@ -751,7 +751,7 @@ function Proc {
       foreach ($file in $Files){$progressbar.PerformStep()}
       if($TOutdisplay -eq "1"){$array.AddRange($pro) ;$gridProcesses.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $pro > "$env:USERPROFILE\Desktop\Analysis\Process.txt" }
-      if($TOutgridAnalysis -eq "1"){ $pro| Out-GridView}}
+      if($TOutAnalysis -eq "1"){ $pro| Out-GridView}}
 function Service {
         $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
@@ -761,7 +761,7 @@ function Service {
       foreach ($file in $Files){$progressbar.PerformStep()} 
     if($TOutdisplay -eq "1"){$array.AddRange($Ser) ;$gridServices.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $ser > "$env:USERPROFILE\Desktop\Analysis\Service.txt" }
-      if($TOutgridAnalysis -eq "1"){ $ser| Out-GridView}}
+      if($TOutAnalysis -eq "1"){ $ser| Out-GridView}}
 function conn {
         $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
@@ -771,7 +771,7 @@ function conn {
       foreach ($file in $Files){$progressbar.PerformStep()} 
       if($TOutdisplay -eq "1"){$array.AddRange($con) ;$gridConnections.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $con > "$env:USERPROFILE\Desktop\Analysis\Connection.txt" }
-      if($TOutgridAnalysis -eq "1"){ $con| Out-GridView}}
+     if($TOutAnalysis -eq "1"){ $con| Out-GridView}}
 function sch {
         $progressbar.value = 0 
       $array = New-Object System.Collections.ArrayList
@@ -781,7 +781,7 @@ function sch {
       foreach ($file in $Files){$progressbar.PerformStep()} 
       if($TOutdisplay -eq "1"){$array.AddRange($sch) ;$gridSchTasks.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $sch > "$env:USERPROFILE\Desktop\Analysis\ScheduleTask.txt" }
-      if($TOutgridAnalysis -eq "1"){ $sch| Out-GridView}}
+      if($TOutAnalysis -eq "1"){ $sch| Out-GridView}}
 function Reg {
       $progressbar.value = 0
       $array = New-Object System.Collections.ArrayList
@@ -794,7 +794,7 @@ function Reg {
         Foreach ($x2 in $Target) {
             if($TOutdisplay -eq "1"){$array.Add($x2); $gridregistry.DataSource = $array ;$form.refresh()}
             if($TOuttext -eq "1"){Echo $x2 > "$env:USERPROFILE\Desktop\Analysis\ScheduleTask.txt" }
-            if($TOutgridAnalysis -eq "1"){ $x2| Out-GridView}
+            if($TOutAnalysis -eq "1"){ $x2| Out-GridView}
            
       }
 }
@@ -807,7 +807,7 @@ function ADUsers {
       foreach ($file in $Files){$progressbar.PerformStep()}   
       if($TOutdisplay -eq "1"){$array.AddRange($ADU) ;$gridActiveD.DataSource = $array ;$form.refresh()}
       if($TOuttext -eq "1"){Echo $ADU > "$env:USERPROFILE\Desktop\Analysis\AD.txt" }
-      if($TOutgridAnalysis -eq "1"){ $ADU| Out-GridView}
+      if($TOutAnalysis -eq "1"){ $ADU| Out-GridView}
 }
 #function Files {
 #
