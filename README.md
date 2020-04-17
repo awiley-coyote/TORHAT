@@ -1,6 +1,6 @@
 # TORHAT
-The One Ronin Host Analysis Tool
+TORHAT.ps1 (The One Ronin Host Analysis Tool) is designed to perform basic data gathering from host machines for the analyst to incorporate in their analyst adventures. It currently provides the option to perform data gathering via GUI or console. 
 
-This is a PowerShell script designed to allow for host analysis via the GUI or console. 
 
-Console.ps1 is strictly the console side to the tool. GUI.ps1 is strictly the GUI. Both to be merged into torhat.ps1 shortly. 
+Console.ps1 is strictly the console side to the tool. 
+GUI.ps1 is strictly the GUI.  
